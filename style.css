@@ -1,0 +1,734 @@
+/* styles.css */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Fallback for body */
+  color: #333;
+  font-weight: 200; /* Lighter weight for less bold appearance */
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures even spacing between logo and nav */
+  padding: 10px 20px;
+  background-color: #fff; /* Adjust to your header background color */
+  border-bottom: 1px solid #ccc; /* Optional: Adds a bottom border */
+  position: relative; /* Ensure positioning for dropdown nav */
+  z-index: 1000; /* Place above other content */
+}
+
+/* Logo Styling */
+.header .logo img {
+  max-height: 80px; /* Adjust to fit logo size */
+  width: auto;
+  margin-left: 20px; /* Adjust for proper spacing */
+}
+
+/* Navigation Styling */
+.nav-links {
+  list-style: none;
+  display: flex; /* Horizontal alignment by default */
+  gap: 40px; /* Space between nav links */
+  margin-right: 20px;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333; /* Adjust to your text color */
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #007B5E; /* Adjust to your hover color */
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px; /* Align with nav */
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row; /* Keep logo and hamburger aligned */
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: none; /* Hide links by default */
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    flex-direction: column; /* Vertical alignment */
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show links when active */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu on smaller screens */
+  }
+
+  .hamburger.active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+  }
+
+  .hamburger.active .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+.hero {
+  position: relative; /* Allows layering if needed */
+  height: 70vh; /* Full viewport height */
+  background-image: url("../img/young-contractors-project-img-7-scaled.webp"); /* Replace with the actual image path */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Keeps the image centered */
+  background-repeat: no-repeat; /* Prevents tiling */
+  display: flex; /* Center content vertically and horizontally */
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8; /* Reduce overall opacity */
+  text-align: center;
+  color: white; /* Adjust text color for readability */
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensure the overlay appears above the image */
+}
+
+.hero-content {
+  position: relative; /* Ensure this stays above the overlay */
+  z-index: 2; /* Higher than the overlay's z-index */
+  color: white; /* Text color for readability */
+  text-align: center; /* Center align text */
+}
+
+.hero-content h1 {
+  font-family: "Playfair Display", sans-serif; /* Elegant font for hero title */
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 200;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content .btn {
+  font-family: "Playfair Display", sans-serif; /* Elegant font for hero title */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3c5544;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+/* General Section Styles */
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  background-color: #fff;
+}
+
+.about-us .content {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.about-us .content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.about-us .content p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.about-us .image {
+  flex: 1;
+}
+
+.about-us .image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+.tiling-solutions {
+  padding: 50px 10%;
+  background-color: #3c5544;
+  text-align: center;
+  color: #fff;
+}
+
+.tiling-solutions h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.repair-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card Styling */
+.card {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card hr {
+  width: 50px;
+  margin: 10px auto;
+  border: 1px solid #3c5544;
+}
+
+.card p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Section Styling */
+.previous-projects {
+  padding: 50px 10%;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.previous-projects h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* Carousel Styling */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth slide animation */
+}
+
+.project {
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: 100%; /* Each slide takes up the full width */
+  margin: 0 auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.project-image {
+  width: 600px; /* Set the desired width */
+  height: 400px; /* Set the desired height */
+  margin-right: 20px;
+  margin-left: 0;
+  object-fit: cover; /* Ensures the image scales proportionally and fills the area */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+.project-details {
+  text-align: left; /* Ensures text alignment is consistent */
+  display: flex;
+  flex-direction: column; /* Stack text content vertically */
+  justify-content: center; /* Align content vertically in the container */
+  max-width: 400px; /* Adjust as needed */
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.project-details h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.project-details p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+/* Arrow Styling */
+.arrow {
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  color: white;
+  background-color: #475c56; /* Matches the green tone */
+  transform: translateY(-50%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.arrow:hover {
+  background-color: #2e4038; /* Darker green for hover effect */
+}
+
+.arrow:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.arrow::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid white;
+  border-top: 2px solid white;
+  transform: rotate(45deg);
+}
+
+.arrow.left::before {
+  transform: rotate(-135deg);
+}
+
+.arrow.right::before {
+  transform: rotate(45deg);
+}
+
+.why-choose-us {
+  padding: 50px 10%;
+  background-color: #000; /* Black background for contrast */
+  color: #fff; /* White text for contrast */
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.why-choose-us .grid {
+  display: flex; /* Use Flexbox */
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center all content */
+  width: 90%; /* Control overall width */
+  margin: 0 auto; /* Center the grid */
+}
+
+.why-choose-us .grid .card {
+  width: 300px; /* Fixed width for all cards */
+  height: 250px; /* Fixed height for all cards */
+  display: flex; /* Use Flexbox inside cards */
+  flex-direction: column; /* Align content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.why-choose-us .card {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.why-choose-us .card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  align-content: center;
+}
+
+.why-choose-us .card hr {
+  width: 50px;
+  margin: 10px auto;
+  border: 1px solid #3c5544; /* Matches the green tone */
+}
+
+.why-choose-us .card p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    grid-template-rows: auto; /* Allow automatic row creation */
+  }
+
+  .why-choose-us .grid .card:nth-child(4),
+  .why-choose-us .grid .card:nth-child(5) {
+    grid-column: auto; /* Reset grid positioning */
+  }
+}
+
+/*.get-in-touch {*/
+/*  padding: 50px 20%;*/
+/*  text-align: center;*/
+/*  background-color: #ffffff; !* Background color *!*/
+/*  color: #333; !* Text color *!*/
+/*}*/
+
+/*.get-in-touch h2 {*/
+/*  font-family: "Playfair Display", serif;*/
+/*  font-size: 2.5rem;*/
+/*  margin-bottom: 20px;*/
+/*  color: #000;*/
+/*}*/
+
+/*.get-in-touch p {*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*  font-size: 1.1rem;*/
+/*  line-height: 1.8;*/
+/*  color: #555;*/
+/*  margin-bottom: 20px;*/
+/*}*/
+
+/*.get-in-touch .contact-details {*/
+/*  font-size: 1rem;*/
+/*  line-height: 1.5;*/
+/*  color: #333;*/
+/*}*/
+
+/*.get-in-touch .contact-details p {*/
+/*  margin: 10px 0;*/
+/*}*/
+.get-in-touch {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.get-in-touch h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.get-in-touch form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.get-in-touch label {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+
+.get-in-touch input,
+.get-in-touch textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.get-in-touch button {
+  padding: 10px 20px;
+  background-color: #475c56;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.get-in-touch button:hover {
+  background-color: #2e4038;
+}
+
+
+/* Gallery Section Styling */
+.gallery {
+  padding: 50px 10%;
+  text-align: center;
+  background-color: #ffffff; /* Optional: Light background for contrast */
+}
+
+.gallery h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #000; /* Elegant heading */
+}
+
+/* Grid Layout for Images */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 10px; /* Space between images */
+  /*justify-items: center; !* Center images in their grid cells *!*/
+  /*align-items: center;*/
+}
+
+/* Image Styling */
+.gallery-grid img {
+  width: 100%;
+  object-fit: cover;
+  height: 250px; /* Maintain aspect ratio */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Lightbox Styling */
+.lightbox {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 8px; /* Optional rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.lightbox .close:hover {
+  transform: scale(1.2);
+}
+
+/* Image Styling for the Gallery */
+.gallery-grid img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Footer Styling */
+.site-footer {
+  background-color: #475c56;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: "Playfair Display", serif; /* Apply Playfair Display font to the entire footer */
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-nav ul li {
+  margin: 0 20px;
+}
+
+.footer-nav ul li a {
+  font-weight: 300; /* Ensure links also use the lighter weight */
+
+  text-decoration: none;
+  color: #fff;
+  /*font-weight: bold;*/
+  transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: #c8e4d0; /* Lighter shade on hover */
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+.contact-info a {
+  color: #c8e4d0;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.social-media {
+  margin: 20px 0;
+}
+
+.social-media a img {
+  width: 40px;
+  height: 40px;
+  filter: invert(100%);
+  transition: transform 0.3s ease;
+}
+
+.social-media a img:hover {
+  transform: scale(1.2);
+}
+
+.affiliations {
+  margin: 30px 400px 0 400px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: white;
+}
+
+.affiliations img {
+  max-height: 100px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+}
+
+.footer-bottom hr {
+  margin: 20px auto;
+  width: 80%;
+  border-color: #c8e4d0;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #c8e4d0;
+}
