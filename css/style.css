@@ -204,6 +204,17 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+  .about-us {
+    flex-direction: column; /* Stack items */
+    text-align: center;
+  }
+
+  .about-us .image {
+    margin-top: 20px; /* Add spacing */
+  }
+}
+
 /* Section Styling */
 .tiling-solutions {
   padding: 50px 10%;
@@ -341,6 +352,63 @@ body {
   margin: 5px 0;
 }
 
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+    max-width: 100%; /* Take full width */
+    padding: 0 10px; /* Add padding for spacing */
+  }
+
+  .carousel-track {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    flex-direction: column;
+    align-items: center; /* Center align the content */
+    text-align: center;
+  }
+
+  .project-image {
+    width: 90%; /* Make the image more fluid */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .project-details {
+    max-width: 90%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .project-details h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-details p {
+    font-size: 0.9rem;
+  }
+
+  /* Adjust Navigation Arrows */
+  .arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .arrow.left {
+    left: 5px;
+  }
+
+  .arrow.right {
+    right: 5px;
+  }
+}
 /* Arrow Styling */
 .arrow {
   border: none;
@@ -707,15 +775,33 @@ body {
 }
 
 .affiliations {
-  margin: 30px 400px 0 400px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Ensures images wrap instead of overflowing */
   gap: 20px;
   background: white;
+  padding: 20px;
+  margin: 30px auto; /* Centers the section properly */
+  max-width: 90%; /* Prevents images from stretching too far */
 }
 
 .affiliations img {
-  max-height: 100px;
+  max-height: 80px;
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+  .affiliations {
+    flex-direction: column; /* Stack logos vertically on mobile */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    padding: 10px;
+  }
+
+  .affiliations img {
+    max-height: 60px; /* Slightly reduce size for smaller screens */
+  }
 }
 
 .footer-bottom {
