@@ -1,0 +1,57 @@
+<h2>Rebuild Approach</h2>
+<p class="subtitle">Two ways to structure the Astro project. Both deploy to Netlify, both produce static HTML.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Content Collections (Recommended)</h3>
+      <p>Projects, services, testimonials, and FAQs stored as Markdown/MDX files in <code>src/content/</code>. Astro generates pages from them automatically. Adding a new project = adding a new <code>.md</code> file with frontmatter (title, client, stats, images). No code changes needed to add content.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Easy content updates without touching code</li>
+            <li>Type-safe content schemas via Astro</li>
+            <li>Simple to add a CMS later (e.g. Decap CMS)</li>
+            <li>Clean separation of content and layout</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Slightly more initial setup</li>
+            <li>Need to learn Markdown frontmatter conventions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Hardcoded Pages</h3>
+      <p>Each page is a standalone <code>.astro</code> file with content written directly in the template. Simpler structure, but every content change means editing component files. Projects, services, FAQs all live in the page templates.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Simpler to understand at first glance</li>
+            <li>No Markdown/frontmatter to learn</li>
+            <li>Fewer files initially</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Content changes require editing code</li>
+            <li>Harder to add CMS later</li>
+            <li>More repetitive -- each project page is manual</li>
+            <li>Doesn't scale well as content grows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
