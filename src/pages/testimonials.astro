@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+---
+
+<BaseLayout title="Testimonials" description="Read what our clients say about working with Young Contractors Ltd.">
+
+  <section class="page-hero">
+    <h1>Testimonials</h1>
+    <p>What our clients say about us</p>
+  </section>
+
+  <section class="section-padding" style="background: #fafaf7;">
+    <div class="container">
+      <div class="testimonials-grid">
+        <TestimonialCard
+          quote="Outstanding quality and professionalism from start to finish. Young Contractors delivered beyond our expectations on every detail."
+          name="Client Name"
+          role="Project Manager, Development Company"
+        />
+        <TestimonialCard
+          quote="The tiling work across all 263 units was completed to an exceptional standard. Their team was reliable, communicative, and a pleasure to work with."
+          name="Client Name"
+          role="Director, Property Group"
+        />
+        <TestimonialCard
+          quote="We've used Young Contractors on multiple developments and they consistently deliver high-quality work on time and within budget."
+          name="Client Name"
+          role="Construction Manager"
+        />
+        <TestimonialCard
+          quote="Their attention to detail on the stone worktop installations was impressive. Every kitchen was finished to a premium standard."
+          name="Client Name"
+          role="Site Manager"
+        />
+        <TestimonialCard
+          quote="Professional, efficient, and excellent craftsmanship. Young Contractors are our go-to tiling subcontractor for high-end residential projects."
+          name="Client Name"
+          role="Contracts Manager"
+        />
+        <TestimonialCard
+          quote="From the initial consultation through to completion, the team was knowledgeable and responsive. The finished result speaks for itself."
+          name="Client Name"
+          role="Project Director"
+        />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: #2d2d2d;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-hero p {
+    color: #ccc;
+    font-size: 1.1rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
