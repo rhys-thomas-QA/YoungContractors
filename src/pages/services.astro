@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Services" description="Expert tiling solutions, stone fabrication, and repair services from Young Contractors Ltd.">
+
+  <section class="page-hero">
+    <h1>Our Services</h1>
+  </section>
+
+  <!-- Tiling Solutions -->
+  <section class="section-padding" style="background: #fafaf7;">
+    <div class="container">
+      <h2 class="section-title">Tiling Solutions</h2>
+      <p class="section-subtitle">Expert tiling for every sector and application</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Residential Tiling</h3>
+          <p>Transform your project with our expert tiling services, whether it's for a new bathroom, kitchen, or any other living space.</p>
+        </div>
+        <div class="service-card">
+          <h3>Retail Spaces</h3>
+          <p>Create stunning retail environments that attract customers and enhance your brand with our custom tiling solutions.</p>
+        </div>
+        <div class="service-card">
+          <h3>Leisure Facilities</h3>
+          <p>Enhance the aesthetic appeal and functionality of your leisure spaces with our durable and stylish tiles.</p>
+        </div>
+        <div class="service-card">
+          <h3>Commercial Properties</h3>
+          <p>Optimise your commercial spaces with our high-quality tiling that combines beauty with practicality, ensuring cost-effectiveness and efficiency.</p>
+        </div>
+        <div class="service-card">
+          <h3>Wet Room Systems</h3>
+          <p>Using top-of-the-range materials, waterproofing your bathroom correctly is vital to a long-lasting area.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tiled Pedestal System</h3>
+          <p>Tiled terraces and balconies are an ever-present requirement. We can use our metal frame system or pedestals to create your perfect space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fabrication Services -->
+  <section class="section-padding" style="background: #f0ede6;">
+    <div class="container">
+      <h2 class="section-title">Fabrication Services</h2>
+      <p class="section-subtitle">Bespoke stone worktops and surfaces</p>
+      <div class="services-grid services-grid-2">
+        <div class="service-card">
+          <h3>Kitchen Tops, Splashbacks & Bespoke Items</h3>
+          <p>From templating to installation, we deliver bespoke kitchen tops and splashbacks that are both functional and beautiful.</p>
+        </div>
+        <div class="service-card">
+          <h3>Vanity Tops</h3>
+          <p>Add a touch of elegance to your bathrooms with our custom-made vanity tops, designed to meet your specific preferences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repair & Maintenance -->
+  <section class="section-padding" style="background: #fafaf7;">
+    <div class="container">
+      <h2 class="section-title">Repair & Maintenance</h2>
+      <p class="section-subtitle">Restore and protect your surfaces</p>
+      <div class="services-grid services-grid-1">
+        <div class="service-card">
+          <h3>Repair & Maintenance Services</h3>
+          <p>From natural stone repairs to polishing and anti-slip application, we offer services to help maintain or bring back your area to a near-new finish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container" style="text-align: center;">
+      <h2 style="color: #fff; margin-bottom: 0.5rem;">Need a Quote?</h2>
+      <p style="color: #c8e4d0; margin-bottom: 1.5rem;">Get in touch to discuss your project requirements</p>
+      <a href="/contact" class="btn-cta">Contact Us</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: #2d2d2d;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    font-size: 2.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .services-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .services-grid-1 {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .cta-banner {
+    background: #3c5544;
+    padding: 4rem 1.5rem;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    background: #fff;
+    color: #3c5544;
+    padding: 0.75rem 2.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .btn-cta:hover {
+    background: #f0ede6;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid,
+    .services-grid-2,
+    .services-grid-1 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
