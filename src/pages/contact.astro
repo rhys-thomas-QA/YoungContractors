@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with Young Contractors Ltd for a free consultation on your tiling or stone worktop project.">
+
+  <section class="page-hero">
+    <h1>Contact Us</h1>
+    <p>Get in touch to discuss your project</p>
+  </section>
+
+  <section class="section-padding" style="background: #fafaf7;">
+    <div class="container contact-grid">
+      <div class="form-column">
+        <h2>Send Us a Message</h2>
+        <p>Fill in the form below and we'll get back to you as soon as possible.</p>
+        <ContactForm />
+      </div>
+      <div class="details-column">
+        <h2>Contact Details</h2>
+        <div class="detail-item">
+          <h3>Phone</h3>
+          <p><a href="tel:07931216828">07931 216828</a></p>
+        </div>
+        <div class="detail-item">
+          <h3>Email</h3>
+          <p><a href="mailto:danny@youngcontractors.co.uk">danny@youngcontractors.co.uk</a></p>
+        </div>
+        <div class="detail-item">
+          <h3>Address</h3>
+          <p>C/O Azets River House, 1 Maidstone Road, Sidcup, Kent, United Kingdom, DA14 5RH</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: #2d2d2d;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-hero p {
+    color: #ccc;
+    font-size: 1.1rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+  }
+
+  .form-column h2,
+  .details-column h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .form-column > p {
+    margin-bottom: 1.5rem;
+    color: #888;
+  }
+
+  .detail-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .detail-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .detail-item p {
+    line-height: 1.6;
+  }
+
+  .detail-item a {
+    color: #3c5544;
+    text-decoration: none;
+  }
+
+  .detail-item a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
