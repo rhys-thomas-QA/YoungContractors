@@ -3,9 +3,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Young Contractors Ltd",
+      "url": "https://youngcontractors.co.uk",
+      "logo": "https://youngcontractors.co.uk/img/logo-young-contractors.webp",
+      "sameAs": [
+        "https://www.instagram.com/young_contractorsltd/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+44-7931-216828",
+        "contactType": "customer service",
+        "email": "danny@youngcontractors.co.uk"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Young Contractors Ltd",
+      "description": "Premium tiling and stone worktop specialists serving London's most prestigious residential and commercial developments.",
+      "url": "https://youngcontractors.co.uk",
+      "telephone": "+44-7931-216828",
+      "email": "danny@youngcontractors.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C/O Azets River House, 1 Maidstone Road",
+        "addressLocality": "Sidcup",
+        "addressRegion": "Kent",
+        "postalCode": "DA14 5RH",
+        "addressCountry": "GB"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 51.5074,
+          "longitude": -0.1278
+        },
+        "geoRadius": "50000"
+      },
+      "serviceType": ["Tiling", "Stone Worktops", "Fabrication", "Wet Room Systems", "Stone Repair"]
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Home" description="Young Contractors Ltd - Premium tiling and stone worktop specialists serving London's most prestigious developments.">
+<BaseLayout title="Home" description="Young Contractors Ltd - Premium tiling and stone worktop specialists serving London's most prestigious developments." schema={schema}>
 
   <Hero
     title="Premium Tiling & Stone Specialists"

@@ -5,9 +5,12 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description: string;
+  schema?: object;
 }
 
-const { title, description } = Astro.props;
+const { title, description, schema } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/img/young-contractors-project-img-1-scaled.webp', Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -17,11 +20,31 @@ const { title, description } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} | Young Contractors Ltd</title>
   <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#3c5544" />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content={`${title} | Young Contractors Ltd`} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content="Young Contractors Ltd" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${title} | Young Contractors Ltd`} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
 </head>
 <body>
   <Header />

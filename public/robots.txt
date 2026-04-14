@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://youngcontractors.co.uk/sitemap-index.xml
