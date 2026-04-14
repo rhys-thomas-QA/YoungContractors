@@ -1,0 +1,110 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  backgroundImage: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+}
+
+const { title, subtitle, backgroundImage, primaryCta, secondaryCta } = Astro.props;
+---
+
+<section class="hero" style={`background-image: url('${backgroundImage}')`}>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+      {(primaryCta || secondaryCta) && (
+        <div class="hero-ctas">
+          {primaryCta && <a href={primaryCta.href} class="btn btn-primary">{primaryCta.label}</a>}
+          {secondaryCta && <a href={secondaryCta.href} class="btn btn-outline">{secondaryCta.label}</a>}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-overlay {
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 2rem;
+    max-width: 700px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    color: #ddd;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .btn-primary {
+    background: #3c5544;
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: #2e4038;
+  }
+
+  .btn-outline {
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .hero-ctas {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
