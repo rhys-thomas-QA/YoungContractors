@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Us" description="Learn about Young Contractors Ltd - a leading tiling and stone worktop company serving London's most prestigious developments.">
+
+  <section class="page-hero">
+    <h1>About Us</h1>
+  </section>
+
+  <section class="section-padding" style="background: #fafaf7;">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>At Young Contractors Ltd, we pride ourselves on being a leading tiling company that specialises in the supply and installation of natural stone, porcelain, large-format tiles, and mosaic wall/floor tiling.</p>
+        <p>We also offer bespoke stone worktops in the residential, retail, leisure, and commercial sectors. With a commitment to excellence, we offer comprehensive supply and installation services designed to meet the unique needs of each of our clients.</p>
+      </div>
+      <div class="about-image">
+        <img src="/img/young-contractors-project-installed-kitchen-top-scaled.webp" alt="Installed stone kitchen worktop" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background: #f0ede6;">
+    <div class="container">
+      <h2 class="section-title">Our Approach</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Relationships First</h3>
+          <p>We believe in building strong, lasting relationships with our clients. Your satisfaction is our top priority, and we strive to exceed your expectations in every project.</p>
+        </div>
+        <div class="value-card">
+          <h3>Expert Craftsmanship</h3>
+          <p>Our experienced craftsmen are meticulous in their work, delivering precise and immaculate results that stand the test of time.</p>
+        </div>
+        <div class="value-card">
+          <h3>High-Quality Service</h3>
+          <p>We are dedicated to providing quick, high-quality service. Our skilled team uses only the best materials and techniques to ensure a high-end finish on every job.</p>
+        </div>
+        <div class="value-card">
+          <h3>Commercially Competitive</h3>
+          <p>Leveraging our extensive industry connections, we are in a favourable position to offer our clients the best value and superior service.</p>
+        </div>
+        <div class="value-card">
+          <h3>Comprehensive Solutions</h3>
+          <p>From the initial consultation to the final installation, we handle every aspect of your tiling and fabrication needs, ensuring a seamless and hassle-free experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background: #fafaf7;">
+    <div class="container certs-section">
+      <h2 class="section-title">Certifications & Affiliations</h2>
+      <div class="certs-row">
+        <img src="/img/young-contractors-the-tile-association-logo.webp" alt="The Tile Association" />
+        <img src="/img/young-contractors-rb-services-logo-new.webp" alt="RB Services" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: #2d2d2d;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    font-size: 2.5rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 400px;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .value-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .value-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .certs-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+
+  .certs-row img {
+    height: 64px;
+    width: auto;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
